@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import LanguageContext from "../context/LanguageContext";
+import ThemeContext from "../context/ThemeContext";
 import { ICrudFormProps, IUser } from "../types";
 
 const initialForm = {
@@ -19,6 +20,7 @@ const CrudForm = ({
   let navigate = useNavigate();
 
   const { texts } = useContext(LanguageContext);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     if (dataToEdit) {
@@ -65,6 +67,7 @@ const CrudForm = ({
           placeholder={texts.name}
           onChange={handleChange}
           value={form.name}
+          className={theme === "dark" ? "text--white": ""}
         />
         <input
           type="number"
@@ -72,9 +75,14 @@ const CrudForm = ({
           placeholder={texts.phone}
           onChange={handleChange}
           value={form.phone}
+          className={theme === "dark" ? "text--white": ""}
         />
         <input type="submit" value={texts.submit} />
-        <input type="reset" value={texts.reset} onClick={() => handleReset(false)} />
+        <input
+          type="reset"
+          value={texts.reset}
+          onClick={() => handleReset(false)}
+        />
       </form>
     </div>
   );

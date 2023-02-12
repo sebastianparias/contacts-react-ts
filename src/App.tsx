@@ -1,16 +1,18 @@
 import React from "react";
-import logo from "./logo.svg";
 import CrudApi from "./components/CrudApi";
 import { LanguageProvider } from "./context/LanguageContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <>
-        <LanguageProvider>
-          <CrudApi />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <CrudApi />
+          </LanguageProvider>
+        </ThemeProvider>
       </>
     </div>
   );

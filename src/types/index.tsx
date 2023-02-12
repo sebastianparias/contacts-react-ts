@@ -24,6 +24,12 @@ export interface ILanguageContext {
   handleLanguage: () => void;
 }
 
+
+export interface IThemeContext {
+  handleTheme: () => void;
+  theme: string
+}
+
 export interface IUser {
   name: string;
   phone: string;
