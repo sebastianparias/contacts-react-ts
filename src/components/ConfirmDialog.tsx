@@ -1,6 +1,7 @@
 import { ConfirmDialogProps } from "../types";
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
+import LanguageContext from "../context/LanguageContext";
 
 const ConfirmDialog = ({
   deleteData,
@@ -13,6 +14,7 @@ const ConfirmDialog = ({
   };
 
   const { theme } = useContext(ThemeContext);
+  const { texts } = useContext(LanguageContext);
 
   return (
     <>
@@ -24,7 +26,9 @@ const ConfirmDialog = ({
               : "confirm-dialog-container"
           }
         >
-          <div className="confirm-dialog-message">¿Estás seguro?</div>
+          <div className="confirm-dialog-message">
+            {texts.confirmDialogMessage}
+          </div>
           <div className="confirm-dialog-actions">
             <button
               className="confirm-dialog-action-button confirm-dialog-action-accept"
@@ -32,7 +36,7 @@ const ConfirmDialog = ({
                 handleClick(true);
               }}
             >
-              Confirmar
+              {texts.confirmDialogConfirmButton}
             </button>
             <button
               className="confirm-dialog-action-button confirm-dialog-action-cancel"
@@ -40,7 +44,7 @@ const ConfirmDialog = ({
                 handleClick(false);
               }}
             >
-              Cancelar
+              {texts.confirmDialogCancelButton}
             </button>
           </div>
         </div>

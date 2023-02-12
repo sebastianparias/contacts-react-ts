@@ -13,6 +13,9 @@ export interface ITranslation {
   submit: string;
   reset: string;
   languageButton: string;
+  confirmDialogMessage: string;
+  confirmDialogCancelButton: string;
+  confirmDialogConfirmButton: string;
 }
 
 export interface ITranslations {
@@ -24,10 +27,9 @@ export interface ILanguageContext {
   handleLanguage: () => void;
 }
 
-
 export interface IThemeContext {
   handleTheme: () => void;
-  theme: string
+  theme: string;
 }
 
 export interface IUser {

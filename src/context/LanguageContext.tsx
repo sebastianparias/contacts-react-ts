@@ -21,7 +21,11 @@ const translations: ITranslations = {
     phone: "Teléfono",
     submit: "Enviar",
     reset: "Limpiar campos",
-    languageButton: "Cambiar a inglés"
+    languageButton: "Cambiar a inglés",
+    confirmDialogMessage: "¿Estás seguro?",
+    confirmDialogCancelButton: "Cancelar",
+    confirmDialogConfirmButton: "Confirmar",
+
   },
   en: {
     headerTitle: "CRUD API with routes",
@@ -37,7 +41,10 @@ const translations: ITranslations = {
     phone: "Phone",
     submit: "Submit",
     reset: "Clear fields",
-    languageButton: "See in spanish"
+    languageButton: "See in spanish",
+    confirmDialogMessage: "Are you sure?",
+    confirmDialogCancelButton: "Cancel",
+    confirmDialogConfirmButton: "Confirm",
   },
 };
 
